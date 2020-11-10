@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>333</width>
-    <height>474</height>
+    <width>361</width>
+    <height>327</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,9 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QFrame" name="redFrame">
+     <widget class="QFrame" name="colorFrame">
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 4);
-border-radius: 15px;</string>
+       <string notr="true"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -30,40 +29,16 @@ border-radius: 15px;</string>
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="yellowFrame">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 252, 0);
-border-radius: 15px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+     <widget class="QLineEdit" name="urlEdit">
+      <property name="placeholderText">
+       <string>Server URL</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="greenFrame">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(36, 255, 0);
-border-radius: 15px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QGroupBox" name="connectionBox">
-      <property name="styleSheet">
-       <string notr="true">border-radius: 15px;</string>
-      </property>
-      <property name="title">
-       <string>Connection</string>
+     <widget class="QPushButton" name="connectButton">
+      <property name="text">
+       <string>Connect</string>
       </property>
      </widget>
     </item>
