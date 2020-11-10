@@ -45,6 +45,8 @@ void MainWindow::socket_disconnected()
 
 void MainWindow::data_recieved(){
     QByteArray data = socket.readAll();
+    // Assume data.at(1) is always zero as we're never going to recieve more than 3 bytes of data
+    // Nothing bad happens otherwise, so let's just skeep the test
     switch (data.at(0)){
     case 0x12:
         // Turn the lamp on
