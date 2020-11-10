@@ -9,25 +9,38 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->colorFrame->setStyleSheet(lamp_off);
     connect(&socket, &QTcpSocket::connected, this, &MainWindow::socket_connected);
+    connect(&socket, &QTcpSocket::disconnected, this, &MainWindow::socket_disconnected);
     connect(&socket, &QTcpSocket::readyRead, this, &MainWindow::data_recieved);
 }
 
 MainWindow::~MainWindow()
 {
-    socket.disconnect();
+    socket.disconnectFromHost();
     delete ui;
 }
 
 
 void MainWindow::on_connectButton_clicked()
 {
-    QUrl url (ui->urlEdit->text());
-    socket.connectToHost(url.host(),url.port());
+    if (ui->connectButton->text() == "Connect"){
+        QUrl url (ui->urlEdit->text());
+        socket.connectToHost(url.host(),url.port());
+    }
+    else{
+        socket.disconnectFromHost();
+    }
 }
 
 void MainWindow::socket_connected()
 {
+    ui->connectButton->setText("Disconnect");
     qDebug() << "Connected fine";
+}
+
+void MainWindow::socket_disconnected()
+{
+    ui->connectButton->setText("Connect");
+    qDebug() << "Disconnected";
 }
 
 void MainWindow::data_recieved(){

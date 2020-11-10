@@ -19,6 +19,7 @@ public:
 private slots:
     void on_connectButton_clicked();
     void socket_connected();
+    void socket_disconnected();
     void data_recieved();
 
 private:
