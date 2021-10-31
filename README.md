@@ -1,6 +1,6 @@
 # Traffic light app for Ivideon
 
-I've done this with nothing good on my mind. I was not carefull enough so I didn't get an interview there.
+I've done this with nothing good on my mind because I`m a cinnabun. I was not carefull enough so I didn't get an interview there.
 The problems they've mentioned:
 - Tcp socket can get more than one command, or just a part of it. This is not handled.
 - Packet length is not handled properly
